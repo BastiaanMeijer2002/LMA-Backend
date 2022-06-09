@@ -68,4 +68,37 @@ class CompareController extends AbstractController
 
         return $this->json($data);
     }
+
+    /**
+     * @throws \Exception
+     */
+    #[Route('/station/{station1}/{station2}/time/{time}', name: 'app_compare_station_time',methods: "GET")]
+    public function stationTime(int $station1, int $station2, string $time): Response
+    {
+
+        $time = new \DateTime($time);
+
+        $station1 = $this->repository->findBy(
+            [
+                'geolocation'=>$station1,
+                'time'=>$time
+            ],
+            ['date'=>'DESC']
+        );
+
+        $station2 = $this->repository->findBy(
+            [
+                'geolocation'=>$station2,
+                'time'=>$time
+            ],
+            ['date'=>'DESC']
+        );
+
+        $data = [
+            'station1'=>$station1,
+            'station2'=>$station2,
+        ];
+
+        return $this->json($data);
+    }
 }
