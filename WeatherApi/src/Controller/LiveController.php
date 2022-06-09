@@ -10,10 +10,8 @@ use App\Entity\WeatherData;
 use Doctrine\Persistence\ManagerRegistry;
 
 
-/**
- * @Route("/api", name="api_")
- */
-class ApiController extends AbstractController
+
+class LiveController extends AbstractController
 {
     public function __construct(private ManagerRegistry $doctrine) {}
 
