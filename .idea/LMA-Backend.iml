@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/WeatherApi/src" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/WeatherApi/tests" isTestSource="true" packagePrefix="App\Tests\" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/twig/twig" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/phpdocumentor/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/phpdocumentor/reflection-common" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/laminas/laminas-code" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/phpstan/phpdoc-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/stopwatch" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/asset" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/web-link" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/security-http" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/security-core" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/expression-language" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/twig-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/security-csrf" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/password-hasher" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/twig-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/doctrine-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/property-info" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/property-access" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/serializer" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/doctrine/doctrine-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/nelmio/cors-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/proxy-manager-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/validator" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/doctrine/sql-formatter" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/security-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/doctrine/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/doctrine/orm" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/doctrine/persistence" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/doctrine/common" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/doctrine/annotations" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/willdurand/negotiation" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/psr/link" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/doctrine/migrations" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/doctrine/doctrine-migrations-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/fig/link-util" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/api-platform/core" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/dependency-injection" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/cache-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/error-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/flex" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/var-exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/routing" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/finder" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/filesystem" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/runtime" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/config" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/friendsofphp/proxy-manager-lts" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/dotenv" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/framework-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/maker-bundle" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
