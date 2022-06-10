@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Doctrine\Persistence\ManagerRegistry;
+use phpDocumentor\Reflection\Types\This;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -100,5 +101,73 @@ class CompareController extends AbstractController
         ];
 
         return $this->json($data);
+    }
+
+    /**
+     * @throws \Exception
+     */
+    #[Route('/{station}/time/{time1}/{time2}', name: 'app_compare_time',methods: "GET")]
+    public function timeCompare(int $station, string $time1, string $time2): Response
+    {
+        $time1 = new \DateTime($time1);
+        $time2 = new \DateTime($time2);
+
+        $time1 = $this->repository->findOneBy(
+            [
+                'geolocation'=>$station,
+                'time'=>$time1
+            ]
+        );
+
+        $time2 = $this->repository->findOneBy(
+            [
+                'geolocation'=>$station,
+                'time'=>$time2
+            ]
+        );
+
+        $data = [
+            'time1'=>$time1,
+            'time2'=>$time2
+        ];
+
+        return $this->json($data);
+
+
+
+    }
+
+    /**
+     * @throws \Exception
+     */
+    #[Route('/{station}/date/{date1}/{date2}', name: 'app_compare_date',methods: "GET")]
+    public function dateCompare(int $station, string $date1, string $date2): Response
+    {
+        $date1 = new \DateTime($date1);
+        $date2 = new \DateTime($date2);
+
+        $date1 = $this->repository->findBy(
+            [
+                'geolocation'=>$station,
+                'date'=>$date1
+            ]
+        );
+
+        $date2 = $this->repository->findBy(
+            [
+                'geolocation'=>$station,
+                'date'=>$date2
+            ]
+        );
+
+        $data = [
+            'time1'=>$date1,
+            'time2'=>$date2
+        ];
+
+        return $this->json($data);
+
+
+
     }
 }
