@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Doctrine\Persistence\ManagerRegistry;
+use Exception;
 use phpDocumentor\Reflection\Types\This;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -39,7 +40,7 @@ class CompareController extends AbstractController
     }
 
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     #[Route('/station/{station1}/{station2}/{date}', name: 'app_compare_station_date',methods: "GET")]
     public function stationDate(int $station1, int $station2, $date): Response
@@ -71,7 +72,7 @@ class CompareController extends AbstractController
     }
 
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     #[Route('/station/{station1}/{station2}/time/{time}', name: 'app_compare_station_time',methods: "GET")]
     public function stationTime(int $station1, int $station2, string $time): Response
@@ -104,7 +105,7 @@ class CompareController extends AbstractController
     }
 
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     #[Route('/{station}/time/{time1}/{time2}', name: 'app_compare_time',methods: "GET")]
     public function timeCompare(int $station, string $time1, string $time2): Response
@@ -138,7 +139,7 @@ class CompareController extends AbstractController
     }
 
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     #[Route('/{station}/date/{date1}/{date2}', name: 'app_compare_date',methods: "GET")]
     public function dateCompare(int $station, string $date1, string $date2): Response
