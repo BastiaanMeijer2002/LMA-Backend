@@ -85,6 +85,11 @@
       <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/psr/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/symfony/maker-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/lcobucci/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/namshi/jose" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/lcobucci/jwt" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/lexik/jwt-authentication-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/WeatherApi/vendor/stella-maris/clock" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

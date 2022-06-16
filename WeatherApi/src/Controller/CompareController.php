@@ -47,7 +47,7 @@ class CompareController extends AbstractController
     {
         $date = new \DateTime($date);
 
-        $station1 = $this->repository->findBy(
+        $station1 =  $this->repository->findBy(
             [
                 'geolocation'=>$station1,
                 'date'=>$date

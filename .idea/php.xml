@@ -82,6 +82,11 @@
       <path value="$PROJECT_DIR$/WeatherApi/vendor/psr/event-dispatcher" />
       <path value="$PROJECT_DIR$/WeatherApi/vendor/psr/cache" />
       <path value="$PROJECT_DIR$/WeatherApi/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/WeatherApi/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/WeatherApi/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/WeatherApi/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/WeatherApi/vendor/lexik/jwt-authentication-bundle" />
+      <path value="$PROJECT_DIR$/WeatherApi/vendor/stella-maris/clock" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />

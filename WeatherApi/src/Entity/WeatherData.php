@@ -72,6 +72,22 @@ class WeatherData
     #[ORM\Column(type: 'float', nullable: true)]
     private $wind_speed;
 
+    /**
+     * @return mixed
+     */
+    public function getWindSpeed()
+    {
+        return $this->wind_speed;
+    }
+
+    /**
+     * @param mixed $wind_speed
+     */
+    public function setWindSpeed($wind_speed): void
+    {
+        $this->wind_speed = $wind_speed;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
