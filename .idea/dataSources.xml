@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:mysql://localhost:3306/weatherApi</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="weatherApi@iwa-database.cvbw9vrsr0zc.eu-central-1.rds.amazonaws.com" uuid="d97a99bd-f7cc-4393-baa7-98ff16b84b57">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://iwa-database.cvbw9vrsr0zc.eu-central-1.rds.amazonaws.com:3306/weatherApi?serverVersion=5.7&amp;charset=utf8mb4:3306/weatherApi</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

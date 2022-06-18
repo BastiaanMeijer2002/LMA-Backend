@@ -16,3 +16,4 @@ Compare two timestamps for a station: /{station}/time/{time1}/{time2}
 Compare two dates for a station: /{station}/date/{date1}/{date2}
 
 Retrieve historical weather data for a station: /historical/{station}/{date}
+
