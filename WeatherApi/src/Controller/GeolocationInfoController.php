@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/geolocation', name: 'app_geolocation')]
+#[Route('/api/geolocation', name: 'app_geolocation')]
 class GeolocationInfoController extends AbstractController
 {
     private \Doctrine\Persistence\ObjectRepository $repository;

@@ -16,7 +16,7 @@ class LiveController extends AbstractController
     public function __construct(private ManagerRegistry $doctrine) {}
 
     /**
-     * @Route("/live/{geolocation}", name="live", methods={"GET"})
+     * @Route("/api/live/{geolocation}", name="live", methods={"GET"})
      */
     public function show(int $geolocation): Response
     {

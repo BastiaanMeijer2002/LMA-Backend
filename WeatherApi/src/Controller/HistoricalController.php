@@ -16,7 +16,7 @@ class HistoricalController extends AbstractController
     /**
      * @throws \Exception
      */
-    #[Route('/historical/{station}/{date}', name: 'app_historical')]
+    #[Route('/api/historical/{station}/{date}', name: 'app_historical')]
     public function historicalDate(string $station, string $date): Response
     {
         $date = new \DateTime($date);

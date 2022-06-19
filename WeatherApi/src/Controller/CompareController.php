@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\WeatherData;
 use Symfony\Component\Validator\Constraints\DateTime;
 
-#[Route('/compare', name: 'app_compare')]
+#[Route('/api/compare', name: 'app_compare')]
 class CompareController extends AbstractController
 {
     private $repository;
