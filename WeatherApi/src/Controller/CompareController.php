@@ -18,8 +18,8 @@ class CompareController extends AbstractController
 
     public function __construct(private ManagerRegistry $doctrine) {$this->repository = $doctrine->getRepository(WeatherData::class);}
 
-    #[Route('/station/{station1}/{station2}/', name: 'app_compare_station',methods: "GET")]
-    public function station(int $station1, int $station2,): Response
+    #[Route('/station/{station1}/{station2}/{download}', name: 'app_compare_station',methods: "GET")]
+    public function station(int $station1, int $station2): Response
     {
         $station1 = $this->repository->findBy(
             ['geolocation'=>$station1],
@@ -35,6 +35,7 @@ class CompareController extends AbstractController
             'station1'=>$station1,
             'station2'=>$station2
         ];
+
 
         return $this->json($data);
     }
@@ -170,5 +171,20 @@ class CompareController extends AbstractController
 
 
 
+
+    }
+
+    function array_to_xml( $data, &$xml_data ) {
+        foreach( $data as $key => $value ) {
+            if( is_array($value) ) {
+                if( is_numeric($key) ){
+                    $key = 'item'.$key; //dealing with <0/>..<n/> issues
+                }
+                $subnode = $xml_data->addChild($key);
+                $this->array_to_xml($value, $subnode);
+            } else {
+                $xml_data->addChild("$key",htmlspecialchars("$value"));
+            }
+        }
     }
 }
