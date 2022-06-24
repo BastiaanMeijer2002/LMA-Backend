@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Geolocation;
 use Doctrine\Persistence\ManagerRegistry;
-use phpDocumentor\Reflection\Types\This;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,6 +23,80 @@ class GeolocationInfoController extends AbstractController
         return $this->json($station);
 
     }
+
+    #[Route('/info/place/{id}', name: 'app_station_info_place', methods: "GET")]
+    public function geolocationPlaceID(int $id): Response
+    {
+        $station = $this->repository->find($id);
+
+        $town = $station->getTown();
+        if ($town){
+
+            $place = $town;
+
+        }
+
+        $temp = $station->getPlace();
+        if ($temp){
+
+            $place = $temp;
+
+        }
+
+        $temp = $station->getIsland();
+        if ($temp){
+
+            $place = $temp;
+
+        }
+
+        $temp = $station->getVillage();
+        if ($temp){
+
+            $place = $temp;
+
+        }
+
+        $temp = $station->getCity();
+        if ($temp){
+
+            $place = $temp;
+
+        }
+
+        $temp = $station->getMunicipality();
+        if ($temp){
+
+            $place = $temp;
+
+        }
+
+        $temp = $station->getCounty();
+        if ($temp){
+
+            $place = $temp;
+
+        }
+
+        $temp = $station->getRegion();
+        if ($temp){
+
+            $place = $temp;
+
+        }
+
+        $country = $station->getCountry();
+        
+
+        $data = [
+            'place' => $place,
+            'country' => $country
+        ];
+
+        return $this->json($data);
+
+    }
+
 
     #[Route('/id/{place}', name: 'app_geolocation_id', methods: "GET")]
     public function geolocationId(string $place): Response
