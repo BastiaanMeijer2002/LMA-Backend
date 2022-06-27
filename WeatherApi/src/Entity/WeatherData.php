@@ -16,6 +16,8 @@ class WeatherData
     private $id;
 
     #[ORM\Column(type: 'integer',)]
+    #[ORM\ManyToOne(targetEntity: "Geolocation")]
+    #[ORM\JoinColumn(name: "geolocation", referencedColumnName: "id")]
     private $geolocation;
 
     #[ORM\Column(type: 'date')]

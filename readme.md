@@ -23,3 +23,5 @@ Retrieve geolocation info: /api/geolocation/info/{id}
 
 Search for a place and retrieve most recent data and geolocation id: /api/search/{place}
 
+Retrieve statistics: /api/statistics/{measurement_unit}/{order}/{date_start}/{date_end}/{amount}
+

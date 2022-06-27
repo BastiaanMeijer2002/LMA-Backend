@@ -2,9 +2,17 @@
 
 namespace App\Repository;
 
+use App\Entity\Geolocation;
 use App\Entity\WeatherData;
+use DateInterval;
+use DateTime;
+use DateTimeImmutable;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Query\Expr;
+use Doctrine\ORM\Query\Parameter;
 use Doctrine\Persistence\ManagerRegistry;
+use Exception;
 
 /**
  * @extends ServiceEntityRepository<WeatherData>
@@ -39,28 +47,52 @@ class WeatherDataRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return WeatherData[] Returns an array of WeatherData objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('w')
-//            ->andWhere('w.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('w.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
 
-//    public function findOneBySomeField($value): ?WeatherData
-//    {
-//        return $this->createQueryBuilder('w')
-//            ->andWhere('w.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    /**
+     * @throws Exception
+     */
+    public function getStatistics($measurement_unit, $order, $date_start, $date_end, $amount): array
+    {
+        if ($order == 'highest'){
+            $order = 'DESC';
+        } else {
+            $order = 'ASC';
+        }
+
+        $amount = (int)$amount;
+
+        $qb = $this->createQueryBuilder('p')
+            ->select("p.geolocation, MAX(p.".$measurement_unit.")".$measurement_unit)
+            ->innerJoin(Geolocation::class, 'g', Expr\Join::WITH, 'g.id = p.geolocation')
+            ->where("g.country_code = 'LV'")
+            ->orWhere("g.country_code = 'DK'")
+            ->orWhere("g.country_code = 'DE'")
+            ->orWhere("g.country_code = 'EE'")
+            ->orWhere("g.country_code = 'FI'")
+            ->orWhere("g.country_code = 'LT'")
+            ->orWhere("g.country_code = 'DK'")
+            ->orWhere("g.country_code = 'PL'")
+            ->orWhere("g.country_code = 'RU'")
+            ->orWhere("g.country_code = 'DK'")
+            ->orWhere("g.country_code = 'SE'")
+            ->groupBy('p.geolocation')
+            ->orderBy($measurement_unit, $order)
+            ->setMaxResults($amount);
+
+        $date_start = new DateTime($date_start);
+        $date_end = new DateTime($date_end);
+
+        $qb->andWhere($qb->expr()->between('p.date', ':date_start', ':date_end'))
+            ->setParameters(
+                new ArrayCollection([
+                    new Parameter('date_start', $date_start->format("Y-m-d")),
+                    new Parameter('date_end', $date_end->format("Y-m-d"))
+                ])
+            );
+
+        $query = $qb->getQuery();
+
+        return $query->execute();
+
+    }
 }
