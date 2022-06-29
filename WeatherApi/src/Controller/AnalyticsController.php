@@ -16,22 +16,8 @@ class AnalyticsController extends AbstractController
     #[Route('/days/{station}/{days}', name: 'app_analytics', methods: "GET")]
     public function index(int $station, int $days): Response
     {
-        $conn = $this->getEntityManager()->getConnection();
+        $data = $this->repository->getDaysGraphData($station, $days);
 
-        $sql = '
-            SELECT geolocation, date, AVG(wind_speed), AVG(rainfall)
-            FROM weather_data 
-            WHERE geolocation = :station
-            GROUP BY date
-            order by date DESC
-            LIMIT :days
-        ';
-
-        $stmt = $conn->prepare($sql);
-
-        $resultSet = $stmt->executeQuery(['station' => $station,
-                                          'days' => $days]);
-
-        return $this->json($resultSet->fetchAllAssociative());
+        return $this->json($data);
     }
 }

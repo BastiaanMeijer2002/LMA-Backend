@@ -95,4 +95,21 @@ class WeatherDataRepository extends ServiceEntityRepository
         return $query->execute();
 
     }
+
+    /**
+     * @throws Exception
+     */
+    public function getDaysGraphData($station, $days): array {
+        $qb = $this->createQueryBuilder('p')
+            ->select("p.geolocation, p.date, AVG(p.wind_speed) as wind_speed, AVG(p.rainfall) as rainfall")
+            ->where("p.geolocation = :station")
+            ->setParameter('station', $station)
+            ->groupBy('p.date')
+            ->orderBy('p.date', 'DESC')
+            ->setMaxResults((int)$days);
+
+        $query = $qb->getQuery();
+
+        return $query->execute();
+    }
 }
