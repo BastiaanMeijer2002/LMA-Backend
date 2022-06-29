@@ -16,7 +16,11 @@ class SecurityController extends AbstractController
 {
     #[Route('/api/login_check', methods:['POST'])]
     public function login():Response {
-        return new Response('');
+        $result = new Response('');
+
+        $result->headers->set('Access-Control-Allow-Origin', '*');
+
+        return $result;
     }
 
     #[Route('/register', methods: ['POST'])]
