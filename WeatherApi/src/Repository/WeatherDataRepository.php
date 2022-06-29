@@ -92,7 +92,15 @@ class WeatherDataRepository extends ServiceEntityRepository
 
         $query = $qb->getQuery();
 
-        return $query->execute();
+        $result = $query->execute();
+
+        foreach ($result as $item){
+            $place = $this->getEntityManager()->getRepository(Geolocation::class);
+            $place = $place->getPlace((int)$item['geolocation']);
+            $item['geolocation'] = $place;
+        }
+
+        return $result;
 
     }
 

@@ -86,7 +86,7 @@ class GeolocationInfoController extends AbstractController
         }
 
         $country = $station->getCountry();
-        
+
 
         $data = [
             'place' => $place,
@@ -204,6 +204,12 @@ class GeolocationInfoController extends AbstractController
 
         return $this->json(['id' => $data]);
 
+    }
+
+    #[Route('/info/test/{id}', name: 'test', methods: "GET")]
+    public function test(int $id): Response
+    {
+        return $this->json($this->repository->getPlace($id));
     }
 
 
