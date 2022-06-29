@@ -94,13 +94,16 @@ class WeatherDataRepository extends ServiceEntityRepository
 
         $result = $query->execute();
 
+        $statistics = [];
+
         foreach ($result as $item){
             $place = $this->getEntityManager()->getRepository(Geolocation::class);
             $place = $place->getPlace((int)$item['geolocation']);
-            $item['geolocation'] = $place;
+            $temp = ['geolocation' => $place, $measurement_unit => $item[$measurement_unit]];
+            $statistics[] = $temp;
         }
 
-        return $result;
+        return $statistics;
 
     }
 
