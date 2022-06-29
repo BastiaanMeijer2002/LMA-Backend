@@ -51,7 +51,7 @@ class WeatherDataRepository extends ServiceEntityRepository
     /**
      * @throws Exception
      */
-    public function getStatistics($measurement_unit, $order, $date_start, $date_end, $amount): array
+    public function getStatistics($measurement_unit, $order, $date_start, $date_end, $amount, $country = null): array
     {
         if ($order == 'highest'){
             $order = 'DESC';
@@ -59,25 +59,31 @@ class WeatherDataRepository extends ServiceEntityRepository
             $order = 'ASC';
         }
 
+
         $amount = (int)$amount;
 
         $qb = $this->createQueryBuilder('p')
             ->select("p.geolocation, MAX(p.".$measurement_unit.")".$measurement_unit)
-            ->innerJoin(Geolocation::class, 'g', Expr\Join::WITH, 'g.id = p.geolocation')
-            ->where("g.country_code = 'LV'")
-            ->orWhere("g.country_code = 'DK'")
-            ->orWhere("g.country_code = 'DE'")
-            ->orWhere("g.country_code = 'EE'")
-            ->orWhere("g.country_code = 'FI'")
-            ->orWhere("g.country_code = 'LT'")
-            ->orWhere("g.country_code = 'DK'")
-            ->orWhere("g.country_code = 'PL'")
-            ->orWhere("g.country_code = 'RU'")
-            ->orWhere("g.country_code = 'DK'")
-            ->orWhere("g.country_code = 'SE'")
-            ->groupBy('p.geolocation')
+            ->innerJoin(Geolocation::class, 'g', Expr\Join::WITH, 'g.id = p.geolocation');
+
+        if ($country == 'none') {
+            $qb->where("g.country_code = 'LV'")
+                ->orWhere("g.country_code = 'DK'")
+                ->orWhere("g.country_code = 'DE'")
+                ->orWhere("g.country_code = 'EE'")
+                ->orWhere("g.country_code = 'FI'")
+                ->orWhere("g.country_code = 'LT'")
+                ->orWhere("g.country_code = 'PL'")
+                ->orWhere("g.country_code = 'RU'")
+                ->orWhere("g.country_code = 'SE'");
+        } else {
+            $qb->where("g.country_code = '".$country."'");
+        }
+
+        $qb->groupBy('p.geolocation')
             ->orderBy($measurement_unit, $order)
             ->setMaxResults($amount);
+
 
         $date_start = new DateTime($date_start);
         $date_end = new DateTime($date_end);

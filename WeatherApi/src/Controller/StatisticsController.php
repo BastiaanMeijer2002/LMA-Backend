@@ -17,10 +17,10 @@ class StatisticsController extends AbstractController
     public function __construct(private ManagerRegistry $doctrine) {
         $this->repository = $doctrine->getRepository(WeatherData::class);}
 
-    #[Route('/{measurement_unit}/{order}/{date_start}/{date_end}/{amount}', name: 'statistic')]
-    public function index($measurement_unit, $order, $date_start, $date_end, $amount): Response
+    #[Route('/{measurement_unit}/{order}/{date_start}/{date_end}/{amount}/{country}', name: 'statistic')]
+    public function index($measurement_unit, $order, $date_start, $date_end, $amount, $country = null): Response
     {
-        $data = $this->repository->getStatistics($measurement_unit,$order,$date_start,$date_end,$amount);
+        $data = $this->repository->getStatistics($measurement_unit,$order,$date_start,$date_end,$amount, $country);
 
         return $this->json($data);
     }
